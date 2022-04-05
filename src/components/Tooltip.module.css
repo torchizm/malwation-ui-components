@@ -25,18 +25,18 @@
   position: absolute;
   float: right;
   padding: 0.5rem;
-  top: -3rem;
+  top: -2rem;
   left: -4px;
   background-color: var(--background);
   border-radius: var(--border-radius);
 }
 
-.tooltip-show::after {
+.tooltip-rectangle {
   content: "";
   position: absolute;
   width: 8px;
   height: 8px;
-  bottom: -2px;
+  bottom: -4px;
   transform: rotate(45deg);
   background-color: var(--background);
   left: 8px;
@@ -45,7 +45,7 @@
 @keyframes fade {
   0% {
     opacity: 0;
-    top: 0;
+    top: -24px;
   }
   100% {
     opacity: 1;
