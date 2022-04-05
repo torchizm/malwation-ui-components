@@ -1,6 +1,6 @@
 .tooltip-container {
-  --foreground: rgb(255, 255, 255);
-  --background: rgb(88, 82, 82);
+  --foreground: var(--white);
+  --background: var(--gray-1);
 }
 
 .tooltip-container {

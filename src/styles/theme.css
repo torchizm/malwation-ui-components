@@ -1,6 +1,15 @@
 :root {
-  --primary: rgb(117, 21, 146);
-  --secondary: #68acf0;
-  --text-color: #fff;
-  --background: #000;
+  --white: #fff;
+  --blue-1: #034c8c;
+  --blue-2: #2e7bf8;
+  --blue-3: #30a9d9;
+  --emerald: #39c16c;
+  --viking: #62cdd9;
+  --sunset-orange: #ff5050;
+  --warning: #ffb444;
+  --gray-1: #353535;
+  --gray-2: #727272;
+  --gray-3: #ebebeb;
+  --gray-4: #c2c2c2;
+  --border-radius: 0.5rem;
 }

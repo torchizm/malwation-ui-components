@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode, useEffect, useRef } from "react";
+import { FunctionComponent, ReactNode, useEffect, useRef } from "react";
 
 import style from "./Tooltip.module.css";
 
@@ -16,8 +16,12 @@ const Tooltip: FunctionComponent<Props> = (props) => {
     const main = document.getElementsByClassName("app")[0] as HTMLDivElement;
     const { x, width } = element.getBoundingClientRect();
 
+    const maxWidth = parseInt(getComputedStyle(main).maxWidth.split("px")[0]);
+    const isOverflow =
+      main.clientWidth !== maxWidth && (x + width > main.clientWidth || x < 0);
+
     return {
-      isOverflow: x + width > main.clientWidth || x < 0,
+      isOverflow: isOverflow,
       side: x < 0 ? "left" : "right",
       mainWidth: main.clientWidth,
     };
@@ -26,13 +30,7 @@ const Tooltip: FunctionComponent<Props> = (props) => {
   useEffect(() => {
     tooltipItem.current?.addEventListener("mouseover", () => {
       const { isOverflow, side, mainWidth } = isOverflown(tooltipText.current!);
-
-      const {
-        width,
-        height,
-        x: textX,
-        left: textLeft,
-      } = tooltipText.current!.getBoundingClientRect();
+      const { width, height } = tooltipText.current!.getBoundingClientRect();
 
       tooltipText.current!.style.top = `-${height + 8}px`;
 
@@ -41,6 +39,8 @@ const Tooltip: FunctionComponent<Props> = (props) => {
         tooltipText.current!.style.left = textPos;
 
         rectangle.current!.style.display = side === "right" ? "none" : "block";
+      } else {
+        tooltipText.current!.style.left = "0px";
       }
     });
   }, []);

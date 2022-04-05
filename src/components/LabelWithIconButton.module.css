@@ -1,9 +1,8 @@
 .label-with-icon-button {
-  --foreground: rgb(255, 255, 255);
-  --background: rgb(180, 0, 180);
-  --hover: rgba(211, 0, 211);
-  --active: rgb(180, 0, 180);
-  --pressed: rgb(180, 0, 180);
+  --foreground: var(--white);
+  --background: var(--blue-1);
+  --hover: var(--blue-2);
+  --active: var(--blue-1);
 }
 
 .label-with-icon-button {
