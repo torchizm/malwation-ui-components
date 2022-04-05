@@ -1,0 +1,14 @@
+.custom-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.custom-modal div[type="button-right"] {
+  align-self: self-end;
+}
+
+.custom-modal div[type="button-left"] {
+  align-self: self-start;
+}

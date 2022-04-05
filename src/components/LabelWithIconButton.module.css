@@ -1,0 +1,40 @@
+.label-with-icon-button {
+  --foreground: rgb(255, 255, 255);
+  --background: rgb(180, 0, 180);
+  --hover: rgba(211, 0, 211);
+  --active: rgb(180, 0, 180);
+  --pressed: rgb(180, 0, 180);
+}
+
+.label-with-icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  cursor: pointer;
+  width: fit-content;
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius);
+  user-select: none;
+  color: var(--foreground);
+  background-color: var(--background);
+  transition: background-color 50ms ease-in-out;
+}
+
+.label-with-icon-button:hover {
+  background-color: var(--hover);
+}
+
+.label-with-icon-button:active {
+  position: relative;
+  background-color: var(--active);
+  top: 1px;
+}
+
+.label-with-icon-button[position="left"] > svg {
+  order: 0;
+}
+
+.label-with-icon-button[position="right"] > svg {
+  order: 1;
+}

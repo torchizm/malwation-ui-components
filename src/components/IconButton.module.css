@@ -1,0 +1,44 @@
+.icon-button {
+  --foreground: rgb(255, 255, 255);
+  --background: rgb(180, 0, 180);
+  --hover: rgba(211, 0, 211);
+  --active: rgb(180, 0, 180);
+  --pressed: rgb(180, 0, 180);
+}
+
+.icon-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+  user-select: none;
+  color: var(--foreground);
+  background-color: var(--background);
+  transition: background-color 50ms ease-in-out;
+}
+
+.icon-button:hover {
+  background-color: var(--hover);
+}
+
+.icon-button:active {
+  position: relative;
+  background-color: var(--active);
+  top: 1px;
+}
+
+.icon-button[buttonStyle="normal"] {
+  border-radius: var(--border-radius);
+}
+
+.icon-button[buttonStyle="circle"] {
+  border-radius: 50%;
+}
+
+.icon-button svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
